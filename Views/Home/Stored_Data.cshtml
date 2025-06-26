@@ -1,0 +1,42 @@
+﻿
+@model My_Project.Models.Employee
+
+ <html>
+    <head>
+        <style>
+            #Id{
+            color:red;
+           
+            }
+
+        #ID {
+            color:red;
+            background:red;
+        }
+        </style>
+    <title>
+     Stored Data
+    </title>
+    </head>
+    <body>
+        <h1>Please Insert Your Data</h1>
+    <form asp-action="Stored_Data" method="post">
+            <label for="ID" >ID</label>
+            <input  class="ID" asp-for="Id" required/>
+            <br />
+            <label for="Name">Name</label>
+            <input asp-for="Name" required/>
+            <br />
+            <label for="Department">Department</label>
+            <input asp-for="Department" />
+            <br />
+            <label for="Date">Date</label>
+            <input asp-for="Date" type="date" />
+            <br />
+            <label for="Salary" >Salary</label>
+            <input asp-for="Salary" />
+        <button type="submit">Save</button>
+        </form>
+        
+    </body>
+</html>

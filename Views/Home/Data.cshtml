@@ -1,0 +1,55 @@
+﻿@model IEnumerable<My_Project.Models.Employee>
+
+<html>
+<head>
+    <title>Data View Employee</title>
+    <meta charset="utf-8" />
+    <style>
+        h1 {
+            color: red;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+    <h1>This is the Employee Data Stored</h1>
+    @if (Model == null)
+    {
+        <p><b>There Is No storded Data</b></p>
+    }
+    else
+    {
+        <table class="table table-dark table-hover table-striped table-bordered">
+       <thead>
+           <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Department</th>
+            <th>Date</th>
+            <th>Salary</th>
+           </tr>
+       </thead>
+       <tbody>
+       @foreach (var i in Model)
+       {
+       <tr>
+       <td>@i.Id</td>
+       <td>@i.Name</td>
+       <td>@i.Department</td>
+       <td>@i.Date.ToString("yyyy-MM-dd")</td> 
+       <td>@i.Salary</td>
+       </tr>
+            }
+            </tbody>
+        </table>
+
+    }
+  
+    
+</body>
+</html>
